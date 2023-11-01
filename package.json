@@ -1,0 +1,19 @@
+{
+  "name": "get-detail-from-error",
+  "version": "1.0.0",
+  "description": "get detail from error",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Axios",
+    "AxiosError",
+    "Error"
+  ],
+  "author": "Elton Rodrigues",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
