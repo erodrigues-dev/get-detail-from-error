@@ -1,2 +1,2 @@
-const { getDetailFromError } = require("./getDetailFromError");
-module.exports = { getDetailFromError };
+const { getDetailFromError } = require('./src/getDetailFromError')
+module.exports = { getDetailFromError }

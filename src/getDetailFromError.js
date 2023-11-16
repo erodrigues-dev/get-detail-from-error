@@ -4,7 +4,8 @@ const getDetailFromError = (error) => {
     return {
       name: `${error.name}:${error.code}`,
       endpoint: `[${config.method.toUpperCase()}] ${config.url}`,
-      message: response?.data?.message || message,
+      message:
+        response?.data?.detail?.message || response?.data?.message || message,
       status: response?.status,
       response: response?.data,
     };
