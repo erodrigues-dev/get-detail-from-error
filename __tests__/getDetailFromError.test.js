@@ -10,13 +10,15 @@ describe('getDetailFromError', () => {
       config: {
         method: 'get',
         url: '/api/fake/12345',
+        baseURL: 'https://fake-data.com',
       },
     }
 
     const detail = getDetailFromError(error)
 
     expect(detail).toEqual({
-      name: 'AxiosError:ECONABORTED',
+      name: 'AxiosError',
+      origin: 'fake-data.com',
       endpoint: '[GET] /api/fake/12345',
       message: 'connection aborted',
     })
@@ -31,6 +33,7 @@ describe('getDetailFromError', () => {
       config: {
         method: 'get',
         url: '/api/fake/12345',
+        baseURL: 'https://fake-data.com',
       },
       response: {
         status: 400,
@@ -44,7 +47,8 @@ describe('getDetailFromError', () => {
     const detail = getDetailFromError(error)
 
     expect(detail).toEqual({
-      name: 'AxiosError:400',
+      name: 'AxiosError',
+      origin: 'fake-data.com',
       endpoint: '[GET] /api/fake/12345',
       message: 'this resource is not found',
       status: 400,
@@ -64,6 +68,7 @@ describe('getDetailFromError', () => {
       config: {
         method: 'get',
         url: '/api/fake/12345',
+        baseURL: 'https://fake-data.com',
       },
       response: {
         status: 500,
